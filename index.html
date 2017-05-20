@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spotify</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+  <link rel="stylesheet" type="text/css" href="css/artist.css">
+  <link rel="stylesheet" type="text/css" href="css/tracks.css">
+</head>
+
+<body>
+  <div class="background">
+
+    <div class="bodyContainer">
+      <header class="searchContainer">
+        <nav class="searchBar">
+          <form class="searchForm">
+            <input class="artistName" type="text" placeholder="Search for an Artist" value="" autofocus required>
+            <input class="searchButton" type="submit" value="Find">
+          </form>
+        </nav>
+        <div class="resultList">
+          <ul class="resultColumns"></ul>
+        </div>
+        <section class="searchSpan">
+          <div class="artistMainPic"></div>
+          <div class="thumbnailsContainer">
+            <ul class="thumbnailsList"></ul>
+          </div>
+        </section>
+      </header>
+      <div class="tracksContainer">
+        <div class="artistsBar">
+          <div class="resultsTitle"></div>
+        </div>
+        <div class="trackSpan">
+            <div class="songPlay">
+              <div class="songPic"></div>
+            </div>
+            <div class="tracksWrapper">
+            <div class="tracksBar">
+              <div class="tracksTitle"></div>
+            </div>
+            <div class="trackDisplay">
+              <ul class="trackList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/actions.js"></script>
+</body>
+
+</html>

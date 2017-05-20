@@ -1,0 +1,89 @@
+@media only screen and (min-width: 320px) {
+  .searchSpan {
+    display: flex;
+    /*justify-content: center;*/
+    /*flex-basis: 100%;*/
+    height: 85%;
+    margin-top: 2%;
+  }
+  .artistMainPic {
+    flex-basis: 50%;
+  }
+  .artistMainPic img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  }
+  .thumbnailsContainer {
+    flex-basis: 60%
+  }
+  .thumbnailsList {
+    height: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
+  .thumbnailsList li {
+    height: 65%;
+    width: 49%;
+    display: inline-flex;
+    background-color: rgba(40, 39, 39, 0.5);
+    margin: 0 0.5% 0.5% 0;
+    text-align: center;
+    color: #fff;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+  .simiBar {
+    font-size: 1.1em;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+  .simiBar:hover {
+    font-size: 1.2em;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+  .simiBar img {
+    width: 100%;
+    height: 75%;
+    vertical-align: baseline;
+  }
+  .simiBar:hover {
+    transform: scale(1.05);
+  }
+  .thumbnailsList::-webkit-scrollbar-track, .trackDisplay::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  .thumbnailsList::-webkit-scrollbar, .trackDisplay::-webkit-scrollbar {
+    width: 10px;
+  }
+  .thumbnailsList::-webkit-scrollbar-thumb, .trackDisplay::-webkit-scrollbar-thumb {
+    background-color: #F90;
+    background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .searchSpan{
+    margin-top: 0;
+  }
+  .artistMainPic {
+    flex-basis: 30%;
+  }
+  .thumbnailsContainer {
+    flex-basis: 70%;
+  }
+  .thumbnailsList li {
+    height: 100%;
+    width: 24%;
+  }
+}
