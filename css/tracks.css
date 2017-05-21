@@ -35,7 +35,6 @@
     color: white;
     margin: 1%;
   }
-
   .tracksTitle {
     width: 100%;
   }
@@ -75,6 +74,7 @@
   .songPic {
     width: 100%;
     height: 100%;
+    position: relative;
   }
   .songPic img {
     width: 100%;
@@ -105,53 +105,95 @@
     /*display: none;*/
     /*transition: all 2s ease-in-out;*/
   }
+  .pause, .play {
+    width: 15%;
+    height: 15%;
+  }
   div.songPlay input.play {
-    top: 40%;
-    left: 10%;
+    top: 45%;
+    left: -35%;
   }
   div.songPlay input.pause {
-    top: 40%;
-    left: 80%;
-  }
-  .pause, .play {
-    width: 10%;
-    height: 5%;
+    top: 45%;
+    left: 120%;
   }
 }
+
 @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  .tracksContainer{
+  .tracksContainer {
     height: 48.5%;
   }
-  .artistsBar{
+  .artistsBar {
     height: 16%;
   }
-  .tracksBar{
+  .tracksBar {
     height: 8%;
   }
-  .trackSpan{
+  .trackSpan {
     flex-wrap: nowrap;
     flex-direction: row-reverse;
   }
   div.songPlay {
-  height: 100%;
-  margin: 0.6% auto;
+    height: 100%;
+    margin: 0.6% auto;
   }
   .songPic img {
     height: 90%;
   }
+  .pause, .play {
+    width: 15%;
+    height: 15%;
+  }
   div.songPlay input.play {
-    top: 90%;
-    left: 60%;
+    top: 95%;
+    left: 10%;
   }
   div.songPlay input.pause {
-    top: 90%;
-    left: 80%;
+    top: 95%;
+    left: 75%;
   }
-  .pause, .play {
-    width: 5%;
-    height: 7%;
-  }
-  .trackDisplay{
+  .trackDisplay {
     height: 100%;
   }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .resultsTitle {
+    margin: 1% 4%;
+  }
+  .tracksContainer {
+    height: 63.5%;
+  }
+  .artistsBar {
+    height: 6%;
+  }
+  .tracksBar {
+    height: 8%;
+  }
+  .trackSpan {
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
+  .trackDisplay {
+    height: 55%;
+  }
+  div.songPlay {
+    height: 50%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .tracksContainer {
+    height: 55.5%;
+  }
+  .artistsBar {
+    height: 8%;
+  }
+  .trackSpan {
+    flex-wrap: nowrap;
+  }
+  div.songPlay, .trackDisplay {
+    height: 85%;
+  }
+
 }
