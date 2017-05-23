@@ -5,11 +5,7 @@
     flex-wrap: wrap;
     flex-basis: 100%;
     visibility: hidden;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+
   }
   .trackSpan {
     height: 100%;
@@ -53,7 +49,7 @@
     width: 100%;
     border-bottom-style: groove;
     border-bottom-color: transparent;
-    border-bottom-width: thin;
+    border-bottom-width: initial;
   }
   .songBar {
     height: 100%;
@@ -65,11 +61,21 @@
     transition: all 0.6s;
     padding-left: 5%;
     font-size: 1.18em;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
   }
   .songBar:hover {
     background-color: #3d3325;
     font-size: 1.2em;
-    transition: all 0.5s;
+    padding: 2% 4%;
+    transition: all 0.1s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
   }
   .songPic {
     width: 100%;
