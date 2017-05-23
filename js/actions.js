@@ -25,18 +25,17 @@ var searchResults = function(searchValue) {
       var artistName = artistObjects[index].name;
       var simiArtURL = 'https://api.spotify.com/v1/artists/' + artistID + '/related-artists';
       $('li').toggle(600);
-      $('.artistMainPic').html('<img src="' + artistObjects[index].images[1].url + '" />');
+      $('.artistMainPic').html('<div class="picFormat" style="background-image: url(' + artistObjects[index].images[1].url + ');"></div>');
 
       displayTrackPlayer(artistObjects, index, artistID); //function that displays the tracks of selected artist
 
       // get similar artists based on searched artist ID
       $.getJSON(simiArtURL, function(data) {
-        // console.log(data);
         var simiArtData = data.artists;
         for (var i = 0; i < simiArtData.length; i++) {
           var simiArtPic = simiArtData[i].images[1].url;
           var simiArtName = simiArtData[i].name;
-          $('.thumbnailsList').append('<li><div class="simiBar"><img src="' + simiArtPic + '" /><p>' + simiArtName + ' </p></div></li>');
+          $('.thumbnailsList').append('<li><div class="simiBar picFormat" style="background-image: url(' + simiArtPic + ');"><p class="mobileP">' + simiArtName + ' </p></div><div class="middle"><p>' + simiArtName + ' </p></div></li>');
         }
         $('.resultsTitle').html(simiArtData.length + ' similar artists found for <strong>' + artistName + '</strong>');
 
@@ -44,7 +43,6 @@ var searchResults = function(searchValue) {
           event.preventDefault();
           var index = $(this).index();
           var simiArtID = simiArtData[index].id;
-
           displayTrackPlayer(simiArtData, index, simiArtID);
         });
       });
@@ -74,7 +72,7 @@ var searchResults = function(searchValue) {
           // adds audio controls to the track's picture
           var playBtn = ('<input class="play" type="image" src="images/play.png" />');
           var pauseBtn = ('<input class="pause" type="image" src="images/pause.png" />');
-          $('.songPic').html('<img src="' + topTrackData[0].album.images[0].url + '" />' + playBtn + pauseBtn);
+          $('.songPic').html('<div class="picFormat" style="background-image: url(' + topTrackData[0].album.images[0].url + ');">' + playBtn + pauseBtn + '</div>');
 
           // audio controls function
           function playAudio(index) {
@@ -102,7 +100,7 @@ var searchResults = function(searchValue) {
             event.preventDefault();
             var index = $(this).index();
             $('.songPic img').remove();
-            $('.songPic').html('<img src="' + topTrackData[index].album.images[0].url + '" />' + playBtn + pauseBtn);
+            $('.songPic').html('<div class="picFormat" style="background-image: url(' + topTrackData[index].album.images[0].url + ');">' + playBtn + pauseBtn + '</div>');
             //plays audio of selected track
             playAudio(index); //<--important
           });

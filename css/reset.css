@@ -1,8 +1,9 @@
 @font-face {
-    font-family: OCR A Extended;
-    src: url("../fonts/Cronus Round.otf");
-    src: url("../fonts/OCRAEXT.TTF");
+  font-family: OCR A Extended;
+  src: url("../fonts/Cronus Round.otf");
+  src: url("../fonts/OCRAEXT.TTF");
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,6 @@
   font-size: 100%;
   vertical-align: baseline;
   box-sizing: border-box;
-  /*color: #fff;*/
 }
 
 body {
@@ -43,10 +43,12 @@ a:active, a:hover, a:link, a:visited {
 ol, ul {
   list-style: none;
 }
+
 li:hover {
-    cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
+
 img {
   border-style: none;
 }
@@ -64,11 +66,16 @@ button {
   text-transform: none;
   -webkit-appearance: button;
 }
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    body{
-      font-size: 18px;
-    }
+
+.picFormat {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    font-size: 18px;
   }
+}
