@@ -103,15 +103,31 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
   .searchContainer {
     justify-content: center;
   }
-  .searchSpan {
-    flex-basis: 95%;
-    margin: 1% 0;
+  .searchBar {
+    height: 20%;
+  }
+}
+
+@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  .bodyContainer {
+    display: flex;
+    height: 90vh;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .searchContainer {
+    display: flex;
+    height: 40%;
+    flex-basis: 100%;
+    flex-wrap: wrap;
   }
   .searchBar{
-    height: 20%;
+    height: 18%;
+    padding: 1%;
   }
 }

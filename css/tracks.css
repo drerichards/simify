@@ -102,8 +102,6 @@
   div.songPlay input {
     z-index: 1;
     position: absolute;
-    /*display: none;*/
-    /*transition: all 2s ease-in-out;*/
   }
   .pause, .play {
     width: 15%;
@@ -182,9 +180,9 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   .tracksContainer {
-    height: 55.5%;
+    height: 53.5%;
   }
   .artistsBar {
     height: 8%;
@@ -195,5 +193,46 @@
   div.songPlay, .trackDisplay {
     height: 85%;
   }
+}
 
+@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  .tracksContainer {
+    height: 55%;
+  }
+  .artistsBar {
+    height: 10%;
+  }
+  .resultsTitle {
+    margin: 1% 3%;
+  }
+  .trackSpan{
+    flex-direction: row-reverse;
+  }
+  .tracksWrapper{
+    width: 55%;
+  }
+  div.songPlay {
+    width: 35%;
+    height: 90%;
+    margin: 0.3%;
+  }
+  div.songPlay input:hover{
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+  div.songPlay input {
+    display: none;
+  }
+    div.songPlay input.play {
+    top: 45%;
+    left: 5%;
+  }
+    div.songPlay input.pause {
+    top: 45%;
+    left: 80%;
+  }
 }
