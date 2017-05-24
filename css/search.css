@@ -74,7 +74,7 @@
     padding: 3%;
     clear: both;
     transition: all 0.2s ease;
-        margin: 0.5%;
+    margin: 0.5%;
   }
   .resultsListBar:hover {
     background-color: #95b2c9;
@@ -107,7 +107,7 @@
 }
 
 @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-  .bodyContainer{
+  .bodyContainer {
     font-size: 16px;
   }
   .searchContainer {
@@ -120,6 +120,8 @@
 
 @media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
   .bodyContainer {
+    min-width: 1100px;
+    min-height: 800px;
     width: 80vw;
     margin: 0 auto;
   }
@@ -129,7 +131,7 @@
     flex-basis: 100%;
     flex-wrap: wrap;
   }
-  .searchBar{
+  .searchBar {
     height: 12%;
     padding: 0.4%;
   }
