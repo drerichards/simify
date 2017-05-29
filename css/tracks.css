@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     flex-basis: 100%;
     visibility: hidden;
-
   }
   .trackSpan {
     height: 100%;
@@ -15,7 +14,8 @@
     flex-wrap: wrap;
     margin: 0 3%;
   }
-  .artistsBar, .tracksBar {
+  .artistsBar,
+  .tracksBar {
     width: 100%;
     background-color: #111111;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
@@ -27,7 +27,8 @@
     text-align: right;
     font-size: 1em;
   }
-  .tracksTitle, .resultsTitle {
+  .tracksTitle,
+  .resultsTitle {
     color: white;
     margin: 1%;
   }
@@ -83,8 +84,8 @@
     position: relative;
   }
   div.songPlay {
-    width: 50%;
-    height: 35%;
+    flex-basis: 60%;
+    height: 45%;
     margin: 2% auto;
   }
   div.songPlay:hover input {
@@ -95,17 +96,22 @@
     z-index: 1;
     position: absolute;
   }
-  .pause, .play {
+  .pause,
+  .play {
     width: 15%;
     height: 15%;
   }
   div.songPlay input.play {
     top: 45%;
-    left: -35%;
+    left: -30%;
   }
   div.songPlay input.pause {
     top: 45%;
-    left: 120%;
+    left: 115%;
+  }
+    .tracksWrapper {
+    flex-basis: 100%;
+    height: 60%;
   }
 }
 
@@ -116,16 +122,17 @@
   .artistsBar {
     height: 16%;
   }
-  .tracksWrapper{
+  .tracksWrapper {
     width: 50%;
-height: 90%;
+    height: 90%;
   }
   .tracksBar {
     height: 8%;
   }
   .trackSpan {
     flex-wrap: nowrap;
-    flex-direction: row-reverse;align-items: flex-start;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     justify-content: center;
   }
   div.songPlay {
@@ -135,7 +142,8 @@ height: 90%;
   .songPic img {
     height: 90%;
   }
-  .pause, .play {
+  .pause,
+  .play {
     width: 15%;
     height: 15%;
   }
@@ -187,7 +195,8 @@ height: 90%;
   .trackSpan {
     flex-wrap: nowrap;
   }
-  div.songPlay, .trackDisplay {
+  div.songPlay,
+  .trackDisplay {
     height: 85%;
   }
 }
@@ -224,7 +233,8 @@ height: 90%;
   div.songPlay input {
     display: none;
   }
-  .pause, .play {
+  .pause,
+  .play {
     width: 10%;
     height: 10%;
   }

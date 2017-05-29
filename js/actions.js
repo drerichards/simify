@@ -1,7 +1,7 @@
 'use strict'
 // search for the artist
 var searchResults = function(searchValue) {
-  $('.artistMainPic img').remove(); //for future searches
+  $('.artistMainPic').remove(); //for future searches
   $('.tracksContainer').css("visibility", "hidden"); //hides bottom container
   var params = { //minimum params to get a list of results for a searched artist
     q: searchValue,
@@ -12,7 +12,7 @@ var searchResults = function(searchValue) {
   // show results related to the search value
   $.getJSON(url, params, function(data) {
     $('li').remove();
-    // console.log(data);
+
     var artistObjects = data.artists.items;
     for (var i = 0; i < artistObjects.length; i++) { //list results from search
       var resultItems = artistObjects[i].name;
