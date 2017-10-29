@@ -1,8 +1,8 @@
 @media only screen and (min-width: 320px) {
   .searchSpan {
     display: flex;
-    height: 85%;
-    margin-top: 2%;
+    height: 100%;
+    width: 100%;
   }
   .mobileP {
     background-color: #95b2c9;
@@ -14,7 +14,8 @@
     display: none;
   }
   .artistMainPic {
-    flex-basis: 50%;
+    width: 30%;
+    height: 100%;
   }
   .artistMainPic img {
     width: 100%;
@@ -22,7 +23,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   }
   .thumbnailsContainer {
-    flex-basis: 60%
+    flex-basis: 60%;
   }
   .thumbnailsList {
     height: 100%;

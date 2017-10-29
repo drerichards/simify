@@ -8,6 +8,8 @@
     vertical-align: baseline;
     letter-spacing: 1px;
     box-sizing: border-box;
+    color: #fff;
+    font-weight: 300;
 }
 
 body {
@@ -16,6 +18,8 @@ body {
     height: 100vh;
     width: 100vw;
     font-size: 100%;
+    flex-direction: column;
+    justify-content: center;
     font-family: "Mada", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -73,8 +77,6 @@ button {
     background-size: cover;
     height: 100%;
     width: 100%;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {

@@ -47,10 +47,8 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/callback', (req, res) => {
-
   // application requests refresh and access tokens
   // after checking the state parameter
-
   let code = req.query.code || null
   let state = req.query.state || null
   let storedState = req.cookies ? req.cookies[stateKey] : null

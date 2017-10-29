@@ -1,31 +1,33 @@
+let accessToken, refreshToken
 {
     /**
      @return Object
      */
     const getHashParams = () => {
-        let hashParams = {};
+        let hashParams = {}
         let e, r = /([^&;=]+)=?([^&;]*)/g,
-            q = window.location.hash.substring(1);
+            q = window.location.hash.substring(1)
         while (e = r.exec(q)) {
-            hashParams[e[1]] = decodeURIComponent(e[2]);
+            hashParams[e[1]] = decodeURIComponent(e[2])
         }
         window.history.pushState("Simify", "Title", "/")
-        return hashParams;
+        return hashParams
     }
-    
-    const params = getHashParams();
-    const access_token = params.access_token,
+
+    const params = getHashParams()
+    let access_token = params.access_token,
         refresh_token = params.refresh_token,
-        error = params.error;
+        error = params.error
+
 
     if (error) {
-        alert('There was an error during the authentication');
+        alert('There was an error during the authentication')
     } else {
         if (access_token) {
             // render oauth info
-                console.log({access_token: access_token,
-                refresh_token: refresh_token
-            });
+            accessToken = access_token,
+                refreshToken = refresh_token
+            
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
@@ -33,31 +35,29 @@
                     'Authorization': 'Bearer ' + access_token
                 },
                 success: (response) => {
-                    $('.loginModal').hide();
-                    $('.bodyContainer').fadeIn();
+                    $('.loginModal').hide()
+                    $('.bodyContainer').show()
                     $('#userID').html(response.id)
                 }
-            });
+            })
         } else {
             // render initial screen
-            $('.loginModal').fadeIn();
-            $('.bodyContainer').fadeOut();
+            $('.loginModal').show()
+            $('.bodyContainer').hide()
         }
 
-        // document.getElementById('obtain-new-token').addEventListener('click', function () {
-        //     $.ajax({
-        //         url: '/refresh_token',
-        //         data: {
-        //             'refresh_token': refresh_token
-        //         }
-        //     }).done(function (data) {
-        //         access_token = data.access_token;
-        //         console.log({
-        //             access_token: access_token,
-        //             refresh_token: refresh_token
-        //         });
-        //     });
-        // }, false);
+        setInterval(() => {
+            $.ajax({
+                url: '/refresh_token',
+                data: {
+                    'refresh_token': refresh_token
+                }
+            }).done((data) => {
+                access_token = data.access_token
+                accessToken = access_token,
+                    refreshToken = refresh_token
+            })
+        }, 60 * 60 * 1000)
     }
 }
 

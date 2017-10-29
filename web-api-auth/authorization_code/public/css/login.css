@@ -4,8 +4,9 @@
             width: 20%;
             flex-direction: column;
             align-self: center;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.6)
+            background-color: rgba(0, 0, 0, 0.6);
+            min-width: 380px;
+            min-height: 470px;
         }
 
         .loginHeader {
@@ -20,8 +21,6 @@
 
         .loginHeader h1 {
             font-size: 2em;
-            color: #fff;
-            font-weight: 300;
         }
 
         .loginSection {
@@ -30,12 +29,11 @@
             align-items: center;
             flex-direction: column;
             justify-content: center;
+            text-align: center;
         }
 
         .loginSection h2 {
             font-size: 1.2em;
-            font-weight: 300;
-            color: white;
         }
 
         .loginSection a {
@@ -53,12 +51,5 @@
             padding: 6% 35%;
             border-radius: 30px;
             background-color: #02bb0b;
-            color: #fff;
             font-weight: 500;
         }
-
-        /* res.redirect('/#' + querystring.stringify( {
-            access_token: access_token, refresh_token: refresh_token
-        }
-
-        )); */
