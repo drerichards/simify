@@ -4,6 +4,7 @@
         width: 70vw;
         margin: 0 auto;
         display: none;
+        min-width: 1200px;
     }
     .titleHeader {
         display: flex;
@@ -23,6 +24,7 @@
         height: 40%;
         flex-basis: 100%;
         flex-wrap: wrap;
+        min-height: 400px;
     }
     .searchBar {
         display: flex;
@@ -84,7 +86,6 @@
         height: 90vh;
         width: 100%;
         margin: 0 5%;
-        /* position: absolute; */
         overflow-y: auto;
         overflow-x: hidden;
     }

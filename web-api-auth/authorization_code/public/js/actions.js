@@ -16,8 +16,8 @@ const searchArtist = searchValue => {
   searchPromise.then(searchResults => {
     $('.resultColumns li').remove()
     let artistObject = searchResults.artists.items
+    $('.resultList').show()
     for (let i = 0; i < artistObject.length; i++) {
-      $('.resultList').show()
       $('.resultColumns').append(`<li id="${i}"><div class="resultsListBar">${artistObject[i].name}</div></li>`)
     }
 
@@ -26,11 +26,9 @@ const searchArtist = searchValue => {
       let index = e.currentTarget.id,
         artistID = artistObject[index].id,
         artistName = artistObject[index].name
-
       $('.resultList').css('display', 'none')
       $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${artistObject[index].images[1].url})"></div>`)
-      getSimilarArtists(artistID)
-      getArtistTracks(artistID)      
+      endpointPromises(artistID)
     })
   }, err => {
     console.log(err)
@@ -48,7 +46,7 @@ const searchArtist = searchValue => {
   })
 }
 
-const getSimilarArtists = id => {
+const endpointPromises = (id) => {
   const similarArtistPromise = Promise.resolve($.ajax({
     url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
     headers: {
@@ -59,14 +57,11 @@ const getSimilarArtists = id => {
     }
   }))
   similarArtistPromise.then(artistResults => {
-    console.log(artistResults)    
+    showSimilarArtists(artistResults.artists)
   }, err => {
     console.log(err)
   })
-}
-
-const getArtistTracks = id => {
-  const tracksPromise = Promise.resolve($.ajax({
+  const topTracksPromise = Promise.resolve($.ajax({
     url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=SE`,
     headers: {
       'Authorization': 'Bearer ' + accessToken
@@ -75,10 +70,29 @@ const getArtistTracks = id => {
       id: id
     }
   }))
-  tracksPromise.then(tracksResults => {
-    console.log(tracksResults)
+  topTracksPromise.then(tracksResults => {
+    // console.log(tracksResults)
   }, err => {
     console.log(err)
+  })
+}
+
+const showSimilarArtists = results => {
+  $('.thumbnailsList li').remove()
+  let id, name, image
+  for (let i = 0; i < results.length; i++) {
+    if (results[i].images.length > 0) {
+      id = results[i].id
+      name = results[i].name
+      image = results[i].images[1].url
+      $('.thumbnailsList').append(`<li id="${id}"><div class="artistBox picFormat" style="background-image: url('${image}');"><p class="nameBox">${name}</p></div></li>`)
+    }
+  }
+  $('.thumbnailsList li').on('click', e => {
+    e.preventDefault()
+    let id = e.currentTarget.id, index = $(e.currentTarget).index()
+    endpointPromises(id)
+    $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${results[index].images[1].url})"></div>`)
   })
 }
 

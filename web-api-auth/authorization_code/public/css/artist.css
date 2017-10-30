@@ -1,165 +1,178 @@
 @media only screen and (min-width: 320px) {
-  .searchSpan {
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-  .mobileP {
-    background-color: #95b2c9;
-    font-size: 0.8em;
-    margin-top: 90%;
-    height: 15%;
-  }
-  .middle {
-    display: none;
-  }
-  .artistMainPic {
-    width: 30%;
-    height: 100%;
-  }
-  .artistMainPic img {
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-  }
-  .thumbnailsContainer {
-    flex-basis: 60%;
-  }
-  .thumbnailsList {
-    height: 100%;
-    overflow-y: visible;
-    overflow-x: hidden;
-  }
-  .thumbnailsList li {
-    height: 65%;
-    width: 49%;
-    display: inline-flex;
-    background-color: rgba(40, 39, 39, 0.5);
-    margin: 0 0.5% 0.5% 0;
-    text-align: center;
-    color: #fff;
-    transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-  }
-  .simiBar {
-    font-size: 1.1em;
-    position: relative;
-    transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-  }
-  .simiBar:hover {
-    transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    -ms-transition: all 0.1s linear;
-    -o-transition: all 0.1s linear;
-  }
-  .thumbnailsList::-webkit-scrollbar-track, .trackDisplay::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-  .thumbnailsList::-webkit-scrollbar, .trackDisplay::-webkit-scrollbar {
-    width: 10px;
-  }
-  .thumbnailsList::-webkit-scrollbar-thumb, .trackDisplay::-webkit-scrollbar-thumb {
-    background-color: #F90;
-    background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-  }
+    .searchSpan {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nameBox {
+        background-color: rgba(0, 0, 0, 0.6);
+        font-size: 0.9em;
+        width: 100%;
+        padding: 1% 0;
+        border-radius: 0 0 22px 22px;
+    }
+    .artistMainPic {
+        width: 30%;
+        height: 100%;
+    }
+    .picFormat {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        background-position: center top;
+    }
+    .thumbnailsContainer {
+        flex-basis: 69%;
+    }
+    .thumbnailsList {
+        height: 100%;
+        overflow-y: visible;
+        overflow-x: hidden;
+        margin: 0.1% 0;
+        text-align: center;
+    }
+    .thumbnailsList li {
+        border-radius: 145px;
+        height: 49%;
+        width: 24%;
+        min-height: 200px;
+        min-width: 200px;
+        display: inline-flex;
+        margin: 0 4% 0.5% 4%;
+        text-align: center;
+        color: #fff;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+    }
+    .thumbnailsList li:hover {
+        border-radius: 24px;
+    }
+    .artistBox {
+        border-radius: 145px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+    }
+    .artistBox:hover {
+        border-radius: 24px;
+        transition: all 0.1s linear;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+    }
+    .thumbnailsList::-webkit-scrollbar-track,
+    .trackDisplay::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .thumbnailsList::-webkit-scrollbar,
+    .trackDisplay::-webkit-scrollbar {
+        width: 10px;
+    }
+    .thumbnailsList::-webkit-scrollbar-thumb,
+    .trackDisplay::-webkit-scrollbar-thumb {
+        background-color: #F90;
+        background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    }
 }
 
 @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  .mobileP{
-    margin-top: 80%;
-    height: 30%;
-  }
-  .searchSpan {
-    margin-top: 0;
-  }
-  .artistMainPic {
-    flex-basis: 30%;
-  }
-  .thumbnailsContainer {
-    flex-basis: 70%;
-  }
-  .thumbnailsList li {
-    height: 65%;
-    width: 24%;
-  }
+    .mobileP {
+        margin-top: 80%;
+        height: 30%;
+    }
+    .searchSpan {
+        margin-top: 0;
+    }
+    .artistMainPic {
+        flex-basis: 30%;
+    }
+    .thumbnailsContainer {
+        flex-basis: 70%;
+    }
+    .thumbnailsList li {
+        height: 65%;
+        width: 24%;
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-  .mobileP{
-    height: 20%;
-  }
-  .searchSpan {
-    flex-basis: 95%;
-    margin: 1% 0;
-  }
-  .artistMainPic {
-    flex-basis: 40%;
-  }
-  .thumbnailsList li {
-    height: 80%;
-    width: 32.8%;
-  }
+    .mobileP {
+        height: 20%;
+    }
+    .searchSpan {
+        flex-basis: 95%;
+        margin: 1% 0;
+    }
+    .artistMainPic {
+        flex-basis: 40%;
+    }
+    .thumbnailsList li {
+        height: 80%;
+        width: 32.8%;
+    }
 }
 
 @media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
-  .middle {
-    display: inline-block;
-  }
-  .mobileP {
-    display: none;
-  }
-  .searchSpan {
-    flex-basis: 85%;
-    height: 85%;
-    margin: 0.5% 0 0;
-  }
-  .artistMainPic {
-    flex-basis: 25%;
-  }
-  .thumbnailsContainer {
-    flex-basis: 75%;
-    margin-left: 0.4%;
-  }
-  .thumbnailsList li {
-    height: 60%;
-    width: 19%;
-    position: relative;
-  }
-  .simiBar {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .2s linear;
-    backface-visibility: hidden;
-  }
-  .thumbnailsList li:hover .simiBar {
-    opacity: 0.3;
-    filter: blur(1px) grayscale(5%);
-  }
-  .middle {
-    transition: .2s ease;
-    background-color: #95b2c9;
-    font-size: 1.15em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-    padding: 1em 2em;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%)
-  }
-  .thumbnailsList li:hover .middle {
-    opacity: 1;
-  }
+    .middle {
+        display: inline-block;
+    }
+    .mobileP {
+        display: none;
+    }
+    .searchSpan {
+        flex-basis: 85%;
+        height: 85%;
+        margin: 0.5% 0 0;
+    }
+    .artistMainPic {
+        flex-basis: 25%;
+    }
+    .thumbnailsContainer {
+        flex-basis: 75%;
+        margin-left: 0.4%;
+    }
+    .thumbnailsList li {
+        height: 60%;
+        width: 19%;
+        position: relative;
+    }
+    .artistBox {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .2s linear;
+        backface-visibility: hidden;
+    }
+    .thumbnailsList li:hover .artistBox {
+        opacity: 0.3;
+        filter: blur(1px) grayscale(5%);
+    }
+    .middle {
+        transition: .2s ease;
+        background-color: #95b2c9;
+        font-size: 1.15em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        padding: 1em 2em;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+    }
+    .thumbnailsList li:hover .middle {
+        opacity: 1;
+    }
 }
