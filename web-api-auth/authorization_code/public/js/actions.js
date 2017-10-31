@@ -1,7 +1,6 @@
 'use strict'
-// search for the artist
 const searchArtist = searchValue => {
-  // $('.tracksContainer').css("visibility", "hidden") //hides bottom container
+  $('.tracksContainer').css('visibility', 'hidden')  
   const searchPromise = Promise.resolve($.ajax({
     url: 'https://api.spotify.com/v1/search',
     headers: {
@@ -15,8 +14,8 @@ const searchArtist = searchValue => {
   }))
   searchPromise.then(searchResults => {
     $('.resultColumns li').remove()
-    let artistObject = searchResults.artists.items
     $('.resultList').show()
+    let artistObject = searchResults.artists.items
     for (let i = 0; i < artistObject.length; i++) {
       $('.resultColumns').append(`<li id="${i}"><div class="resultsListBar">${artistObject[i].name}</div></li>`)
     }
@@ -28,7 +27,7 @@ const searchArtist = searchValue => {
         artistName = artistObject[index].name
       $('.resultList').css('display', 'none')
       $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${artistObject[index].images[1].url})"></div>`)
-      endpointPromises(artistID)
+      endpointPromises(artistID, artistName)
     })
   }, err => {
     console.log(err)
@@ -46,7 +45,7 @@ const searchArtist = searchValue => {
   })
 }
 
-const endpointPromises = (id) => {
+const endpointPromises = (id, name) => {
   const similarArtistPromise = Promise.resolve($.ajax({
     url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
     headers: {
@@ -57,10 +56,11 @@ const endpointPromises = (id) => {
     }
   }))
   similarArtistPromise.then(artistResults => {
-    showSimilarArtists(artistResults.artists)
+    showSimilarArtists(artistResults.artists, name)
   }, err => {
     console.log(err)
   })
+
   const topTracksPromise = Promise.resolve($.ajax({
     url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=SE`,
     headers: {
@@ -71,13 +71,13 @@ const endpointPromises = (id) => {
     }
   }))
   topTracksPromise.then(tracksResults => {
-    // console.log(tracksResults)
+    showTopTracks(tracksResults.tracks, name)
   }, err => {
     console.log(err)
   })
 }
 
-const showSimilarArtists = results => {
+const showSimilarArtists = (results, artistName) => {
   $('.thumbnailsList li').remove()
   let id, name, image
   for (let i = 0; i < results.length; i++) {
@@ -85,74 +85,65 @@ const showSimilarArtists = results => {
       id = results[i].id
       name = results[i].name
       image = results[i].images[1].url
-      $('.thumbnailsList').append(`<li id="${id}"><div class="artistBox picFormat" style="background-image: url('${image}');"><p class="nameBox">${name}</p></div></li>`)
+      $('.thumbnailsList').append(`<li id="${id}" class="${name}"><div class="artistBox picFormat" style="background-image: url('${image}');"><p class="nameBox">${name}</p></div></li>`)
     }
+    $('.resultsTitle').html(`${results.length} similar artists found for <strong>${artistName}</strong>`)
   }
   $('.thumbnailsList li').on('click', e => {
     e.preventDefault()
-    let id = e.currentTarget.id, index = $(e.currentTarget).index()
-    endpointPromises(id)
+    let id = e.currentTarget.id, index = $(e.currentTarget).index(), name = $(e.currentTarget).attr('class')
+    endpointPromises(id, name)
     $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${results[index].images[1].url})"></div>`)
   })
 }
 
-function displayTrackPlayer(dataObjects, index, id) {
-  var tracksTitle = $('.tracksTitle');
-  //clean up for future search
-  $('.tracksContainer').css("visibility", "visible");
-  $('.trackList li').remove();
-  $('.songPic img').remove();
+const showTopTracks = (results, artistName) => {
+  $('.tracksContainer').css('visibility', 'visible')
+  $('.tracksTitle').html(`Top ${results.length} Tracks for: ${artistName}`)
+  $('.trackList li').remove()
+  for (let i = 0; i < results.length; i++) {
+    $('.trackList').append(`<li><div class="songBar">${results[i].name}</div></li>`)
+  }
+  showTrackPlayer(results)
+}
 
-  var topTracksURL = 'https://api.spotify.com/v1/artists/' + id + '/top-tracks?country=SE'
+const showTrackPlayer = tracks => {
+  const playBtn = ('<input class="play" type="image" src="images/play.png" />')
+  const pauseBtn = ('<input class="pause" type="image" src="images/pause.png" />')
+  $('.songPic').html(`<div class="picFormat" style="background-image: url('${tracks[0].album.images[0].url}')">${playBtn} ${pauseBtn}</div>`)
+  $('.trackList li').on('click', e => {
+    e.preventDefault()
+    let index = $(e.currentTarget).index()
+    $('.songPic').html(`<div class="picFormat" style="background-image: url('${tracks[index].album.images[0].url}')">${playBtn} ${pauseBtn}</div>`)
+    playAudio(tracks, index)
+  })
+}
 
-  // get top tracks of clicked artist
-  $.getJSON(topTracksURL, function (data) {
-    // console.log(data);
-    var topTrackData = data.tracks;
-    tracksTitle.val('');
-    tracksTitle.html('Top ' + topTrackData.length + ' Tracks for: <font color="#54F01D">' + dataObjects[index].name + '</font>');
+const playAudio = (tracks, index) => {
+  let audio = new Audio(tracks[index].preview_url)
+  try {
+    if (tracks[index].preview_url == null) throw 'Track Not Available'
+    audio.play()
+  } catch(err){
+    const snackbar = document.getElementById('snackbar')
+    snackbar.remove()
+    $('.bodyContainer').append(`<div id="snackbar">${err}</div>`)
+    snackbar.className = "show"
+    setTimeout(function () { snackbar.className = snackbar.className.replace("show", "")}, 3000)
+  }
 
-    // lists tracks
-    for (var i = 0; i < topTrackData.length; i++) {
-      var track = topTrackData[i].name;
-      $('.trackList').append('<li><div class="songBar">' + track + '</div></li>');
-    }
-    // adds audio controls to the track's picture
-    var playBtn = ('<input class="play" type="image" src="images/play.png" />');
-    var pauseBtn = ('<input class="pause" type="image" src="images/pause.png" />');
-    $('.songPic').html('<div class="picFormat" style="background-image: url(' + topTrackData[0].album.images[0].url + ');">' + playBtn + pauseBtn + '</div>');
+  $('li, .pause').click(e => {
+    event.preventDefault()
+    audio.pause()
+  })
+  $('.play').click(e => {
+    event.preventDefault()
+    audio.play()
+  })
 
-    // audio controls function
-    function playAudio(index) {
-      var audio = new Audio(topTrackData[index].preview_url);
-      audio.play();
-
-      $('li, .pause').click(function (event) {
-        event.preventDefault();
-        audio.pause();
-      });
-      $('.play').click(function (event) {
-        event.preventDefault();
-        audio.play();
-      });
-
-      $('.searchButton, .thumbnailsList').click(function (event) {
-        event.preventDefault();
-        //stops audio. should not stop audio if search field is empty
-        audio.pause();
-        audio.currentTime = 0;
-      });
-    }
-
-    $('.trackList li').click(function (event) {
-      event.preventDefault();
-      var index = $(this).index();
-      $('.songPic img').remove();
-      $('.songPic').html('<div class="picFormat" style="background-image: url(' + topTrackData[index].album.images[0].url + ');">' + playBtn + pauseBtn + '</div>');
-      //plays audio of selected track
-      playAudio(index); //<--important
-    });
-    //plays first track audio of searched artist
-    playAudio(0);
-  });
+  $('.searchButton, .thumbnailsList').click(e => {
+    event.preventDefault()
+    audio.pause()
+    audio.currentTime = 0
+  })
 }
