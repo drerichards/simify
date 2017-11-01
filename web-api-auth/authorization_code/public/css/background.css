@@ -1,5 +1,6 @@
     .background {
         background-image: url("../images/concert.jpg");
+        background-position: center;
         position: absolute;
         z-index: -1;
         height: 100%;

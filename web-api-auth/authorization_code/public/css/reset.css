@@ -4,7 +4,7 @@
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
+    font-size: 10px;
     vertical-align: baseline;
     letter-spacing: 1px;
     box-sizing: border-box;
@@ -20,8 +20,8 @@ body {
     font-size: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: "Mada", sans-serif;
-    font-weight: 300;
     font-style: normal;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -73,8 +73,8 @@ button {
     -webkit-appearance: button;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    body {
+@media only screen and (min-device-width: 770px) {
+    * {
         font-size: 18px;
     }
 }

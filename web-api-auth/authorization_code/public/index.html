@@ -29,49 +29,56 @@
     </section>
   </div>
 
-    <div class="bodyContainer">
-      <header class="titleHeader">
-        <h1>Simify</h1>
-      </header>
-      <header class="searchContainer">
-        <nav class="searchBar">
-          <form class="searchForm">
-            <input class="artistName" type="text" placeholder="Search for an Artist" value="" autofocus required autocomplete="on">
-            <input class="searchButton" type="submit" value="Find">
-          </form>
-          <h1>Logged In as:
+  <div class="bodyContainer">
+    <header class="titleHeader">
+      <h1>Simify</h1>
+    </header>
+    <header class="searchContainer">
+      <nav class="searchBar">
+        <form class="searchForm">
+          <input class="artistName" type="text" placeholder="Search for an Artist" value="" autofocus required autocomplete="on">
+          <input class="searchButton" type="submit" value="Find">
+        </form>
+        <h1>Logged In as:
           <p id="userID"></p>
-          </h1>
-        </nav>
-        <div class="resultList">
-          <ul class="resultColumns"></ul>
+        </h1>
+      </nav>
+      <div class="resultList">
+        <ul class="resultColumns"></ul>
+      </div>
+      <section class="searchSpan">
+        <div class="artistMainPic"></div>
+        <div class="thumbnailsContainer">
+          <ul class="thumbnailsList"></ul>
         </div>
-        <section class="searchSpan">
-          <div class="artistMainPic"></div>
-          <div class="thumbnailsContainer">
-            <ul class="thumbnailsList"></ul>
+      </section>
+    </header>
+    <div class="tracksContainer">
+      <div class="artistsBar">
+        <div class="resultsTitle"></div>
+      </div>
+      <div class="trackSpan">
+        <div class="tracksWrapper">
+          <div class="tracksBar">
+            <div class="tracksTitle"></div>
+              <div class="dropDown">
+                <span class="arrow">
+                  <img class="arrowImg" src="/images/chevron.png" alt="down-arrow">
+                </span>
+              </div>
           </div>
-        </section>
-      </header>
-      <div class="tracksContainer">
-        <div class="artistsBar">
-          <div class="resultsTitle"></div>
-        </div>
-        <div class="trackSpan">
+          <section class="trackDisplay">
+            <ul class="trackList"></ul>
+          </section>
+        
           <div class="songPlay">
             <div class="songPic"></div>
-          </div>
-          <div class="tracksWrapper">
-            <div class="tracksBar">
-              <div class="tracksTitle"></div>
-            </div>
-            <div class="trackDisplay">
-              <ul class="trackList"></ul>
-            </div>
+            <h1 class="songTitle"></h1>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/auth.js"></script>

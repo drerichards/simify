@@ -1,11 +1,11 @@
-@media only screen and (min-width: 320px) {
     .bodyContainer {
         height: 100vh;
-        width: 70vw;
+        width: 100vw;
         margin: 0 auto;
         display: none;
-        min-width: 1200px;
+        min-width: 0px;
     }
+
     .titleHeader {
         display: flex;
         width: 100%;
@@ -14,51 +14,60 @@
         justify-content: flex-end;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
     }
+
     .titleHeader h1 {
         font-size: 3.2em;
         padding-right: 1%;
         letter-spacing: 5px;
     }
+
     .searchContainer {
         display: flex;
         height: 40%;
         flex-basis: 100%;
         flex-wrap: wrap;
-        min-height: 400px;
+        min-height: 0px;
     }
+
     .searchBar {
         display: flex;
         flex-basis: 100%;
         justify-content: space-between;
         align-items: center;
-        height: 10%;
+        height: 7%;
         padding-right: 1.5%;
         background-color: rgba(0, 0, 0, 0.6);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     }
+
     .searchForm {
         display: flex;
         height: 100%;
-        width: 60%;
+        width: 55%;
     }
+
     .searchBar h1 {
         font-weight: 300;
     }
+
     .searchBar h1 p {
         color: rgb(99, 196, 60);
         font-weight: 400;
         display: inline-block;
     }
+
     button,
     html [type="button"],
     [type="reset"],
     [type="submit"] {
         -webkit-appearance: button;
     }
+
     input:-webkit-autofill,
      ::-webkit-input-placeholder {
         -webkit-text-fill-color: #f06d06;
     }
+
     input[type="text"] {
         background: transparent;
         border-bottom: 1px solid;
@@ -66,22 +75,24 @@
         color: #f06d06;
         font-size: 1.2em;
         padding: 0 2.5%;
-        padding-right: 30%;
+        padding-right: 10%;
         transition: all 0.2s ease-in;
     }
+
     input[type="text"]:hover {
         background: rgba(133, 126, 64, 0.7);
         transition: all 0.5s;
     }
+
     .searchButton {
         background-color: #f06d06;
-        color: white;
         padding: 0 1.5%;
         font-size: 1em;
         cursor: pointer;
         border: 1px solid;
         border-color: rgba(255, 255, 255, 0.4);
     }
+
     .resultList {
         height: 90vh;
         width: 100%;
@@ -89,16 +100,17 @@
         overflow-y: auto;
         overflow-x: hidden;
     }
+
     .resultsListBar {
         height: 5%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        color: white;
         font-size: 1.1em;
         padding: 1%;
         transition: all 0.2s ease;
-        margin: 0.1%;
+        margin: 0.3%;
     }
+
     .resultsListBar:hover {
         background-color: #B0C43C;
         font-size: 1.15em;
@@ -106,53 +118,30 @@
         font-weight: 400;
         transition: all 0.2s ease;
     }
+
     .resultColumns {
         margin-top: 0;
     }
-}
 
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    .bodyContainer {
-        width: 80vw;
-        height: 90vh;
-        margin: 0 auto;
-        font-size: 11px;
+    @media screen and (min-device-width: 770px) {
+        .bodyContainer {
+            width: 70vw;
+            display: none;
+            min-width: 1200px;
+        }
+        .searchContainer {
+            min-height: 400px;
+        }
+        .searchForm {
+            width: 60%;
+        }
+        .searchBar {
+            height: 10%;
+        }
+        input[type="text"] {
+            padding-right: 30%;
+        }
+        .resultsListBar {
+            margin: 0.1%;
+        }
     }
-    .searchContainer {
-        height: 40%;
-    }
-    .searchBar {
-        height: 30%;
-    }
-}
-
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-    .bodyContainer {
-        font-size: 16px;
-    }
-    .searchContainer {
-        justify-content: center;
-    }
-    .searchBar {
-        height: 20%;
-    }
-}
-
-@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
-    .bodyContainer {
-        min-width: 1100px;
-        min-height: 800px;
-        width: 80vw;
-        margin: 0 auto;
-    }
-    .searchContainer {
-        display: flex;
-        height: 40%;
-        flex-basis: 100%;
-        flex-wrap: wrap;
-    }
-    .searchBar {
-        height: 8%;
-        padding: 0.4%;
-    }
-}
