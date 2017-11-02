@@ -122,9 +122,6 @@
     .tracksContainer {
         height: 47.5%;
     }
-    .artistsBar {
-        /* height: 16%; */
-    }
     .tracksWrapper {
         width: 50%;
         height: 90%;
@@ -159,7 +156,7 @@
     }
     div.songPlay input.pause {
         top: 80%;
-        left: 75%;
+        left: 80%;
     }
     .trackDisplay {
         height: 100%;

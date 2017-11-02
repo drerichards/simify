@@ -1,7 +1,8 @@
 'use strict'
 const searchArtist = searchValue => {
+  $('.searchSpan').css('visibility', 'hidden')
   $('.tracksContainer').css('visibility', 'hidden')
-  $('songTitle').html('')  
+  $('.songTitle').html('')  
   const searchPromise = Promise.resolve($.ajax({
     url: 'https://api.spotify.com/v1/search',
     headers: {
@@ -27,23 +28,13 @@ const searchArtist = searchValue => {
         artistID = artistObject[index].id,
         artistName = artistObject[index].name
       $('.resultList').css('display', 'none')
+      $('.searchSpan').css('visibility', 'visible')
       $('.tracksContainer').css('visibility', 'visible')      
       $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${artistObject[index].images[1].url})"></div>`)
       endpointPromises(artistID, artistName)
     })
   }, err => {
     console.log(err)
-  })
-}
-
-{
-  $('.searchButton').on('click', e => {
-    if ($('.artistName').val().length > 0) {
-      e.preventDefault()
-      const searchValue = $('.artistName').val()
-      searchArtist(searchValue)
-      $('.artistName').val('')
-    }
   })
 }
 
@@ -96,7 +87,7 @@ const showSimilarArtists = (results, artistName) => {
     let id = e.currentTarget.id, index = $(e.currentTarget).index(), name = $(e.currentTarget).attr('class')
     endpointPromises(id, name)
     $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${results[index].images[1].url})"></div>`)
-    $('songTitle').html('')
+    $('.songTitle').html('')
   })
 }
 
@@ -121,32 +112,6 @@ const showTrackPlayer = tracks => {
     $('.songTitle').html(`Now Playing: ${$(e.target).text()}`)
     playAudio(tracks, index)
   })
-
-  $('.dropDown').on('click', () => {
-    $('.dropDown').toggleClass('open')
-    $('.arrowImg').toggleClass('rotate')
-    $('.trackDisplay').animate({
-      height: 'toggle'
-    })
-  })
-
-  // $('.trackList').on('click', () => {
-  //   $('.arrowImg').toggleClass('rotate')
-  //   $('.trackDisplay').animate({
-  //     height: 'toggle'
-  //   })
-  // })
-
-  // $('.dropDown').mouseenter(() => {
-  //     $('.arrowImg').animate({
-  //       marginBottom: "15px"
-  //     }, 50)
-  // })
-  // $('.dropDown').mouseout(() => {
-  //   $('.arrowImg').animate({
-  //     marginBottom: "0px"
-  //   }, 50)
-  // })
 }
 
 const playAudio = (tracks, index) => {
@@ -155,12 +120,12 @@ const playAudio = (tracks, index) => {
     if (tracks[index].preview_url == null) throw 'Track Not Available'
     audio.play()
   } catch (err) {
-    const snackbar = document.getElementById('snackbar')
-    snackbar.remove()
     $('.bodyContainer').append(`<div id="snackbar">${err}</div>`)
+    const snackbar = document.getElementById('snackbar')
     snackbar.className = "show"
     setTimeout(() => {
       snackbar.className = snackbar.className.replace('show', "")
+      snackbar.remove()
     }, 3000)
   }
 
@@ -180,3 +145,33 @@ const playAudio = (tracks, index) => {
   })
 }
 
+const eventDelActions = () =>{
+  $('.bodyContainer').on('click', '.dropDown', '.trackList', () => {
+    $('.dropDown').toggleClass('open')
+    $('.arrowImg').toggleClass('rotate')
+    $('.songPic').toggleClass('opacity')    
+    $('.trackDisplay').animate({
+      height: 'toggle'
+    })
+  })
+
+  $('.bodyContainer').on('click', '.trackList', () => {
+    $('.arrowImg').toggleClass('rotate')
+    $('.songPic').toggleClass('opacity')    
+    $('.trackDisplay').animate({
+      height: 'toggle'
+    })
+  })
+}
+
+{
+  $('.searchButton').on('click', e => {
+    if ($('.artistName').val().length > 0) {
+      e.preventDefault()
+      const searchValue = $('.artistName').val()
+      searchArtist(searchValue)
+      $('.artistName').val('')
+    }
+  })
+  eventDelActions()
+}

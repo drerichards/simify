@@ -77,11 +77,19 @@
         padding: 0 2.5%;
         padding-right: 10%;
         transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -ms-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
     }
 
     input[type="text"]:hover {
         background: rgba(133, 126, 64, 0.7);
         transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
     }
 
     .searchButton {
@@ -107,8 +115,12 @@
         background-color: rgba(0, 0, 0, 0.6);
         font-size: 1.1em;
         padding: 1%;
-        transition: all 0.2s ease;
         margin: 0.3%;
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
     }
 
     .resultsListBar:hover {
@@ -117,6 +129,10 @@
         text-shadow: 2px 1px rgba(0, 0, 0, 0.35);
         font-weight: 400;
         transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
     }
 
     .resultColumns {
