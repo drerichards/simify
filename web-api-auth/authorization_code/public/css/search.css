@@ -114,7 +114,7 @@
         width: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         font-size: 1.1em;
-        padding: 1%;
+        padding: 2.75%;
         margin: 0.3%;
         transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
@@ -159,5 +159,6 @@
         }
         .resultsListBar {
             margin: 0.1%;
+            padding: 1%;
         }
     }

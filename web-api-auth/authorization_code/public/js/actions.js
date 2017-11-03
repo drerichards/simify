@@ -107,18 +107,19 @@ const showTrackPlayer = tracks => {
   $('.songPic').html(`<div class="picFormat" style="background-image: url('${tracks[0].album.images[0].url}')">${playBtn} ${pauseBtn}</div>`)
   $('.trackList li').on('click', e => {
     e.preventDefault()
-    let index = $(e.currentTarget).index()
+    let index = $(e.currentTarget).index(),
+      songTitle = $(e.target).text()
     $('.songPic').html(`<div class="picFormat" style="background-image: url('${tracks[index].album.images[0].url}')">${playBtn} ${pauseBtn}</div>`)
-    $('.songTitle').html(`Now Playing: ${$(e.target).text()}`)
-    playAudio(tracks, index)
+    playAudio(tracks, index, songTitle)
   })
 }
 
-const playAudio = (tracks, index) => {
+const playAudio = (tracks, index, songTitle) => {
   let audio = new Audio(tracks[index].preview_url)
   try {
     if (tracks[index].preview_url == null) throw 'Track Not Available'
     audio.play()
+    $('.songTitle').html(`Now Playing: ${songTitle}`)    
   } catch (err) {
     $('.bodyContainer').append(`<div id="snackbar">${err}</div>`)
     const snackbar = document.getElementById('snackbar')

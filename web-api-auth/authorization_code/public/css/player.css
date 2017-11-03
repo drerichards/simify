@@ -1,0 +1,178 @@
+.songBar {
+    height: 100%;
+    width: auto;
+    background-color: rgba(40, 39, 39, 0.9);
+    font-family: "Mada";
+    padding: 5%;
+    transition: all 0.6s;
+    padding-left: 5%;
+    font-size: 1.18em;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+
+.songBar:hover {
+    background-color: #3d3325;
+    font-size: 1.2em;
+    padding: 2% 4%;
+    transition: all 0.1s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+}
+
+.songPic {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+div.songPlay {
+    width: 75%;
+    height: 100%;
+    margin: 4% auto;
+}
+
+div.songPlay:hover input {
+    display: flex;
+    position: absolute;
+}
+
+div.songPlay input {
+    z-index: 1;
+    position: absolute;
+}
+
+.pause,
+.play {
+    width: 12%;
+    height: 12%;
+}
+
+div.songPlay input.play {
+    top: 45%;
+    left: 5%;
+}
+
+div.songPlay input.pause {
+    top: 45%;
+    left: 85%;
+}
+
+.opacity {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    transition: 0.70s;
+    -webkit-transition: 0.70s;
+    -moz-transition: 0.70s;
+    -ms-transition: 0.70s;
+    -o-transition: 0.70s;
+}
+
+.songTitle {
+    font-size: 1.1em;
+    margin: 2%;
+    text-align: center;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: rgb(133, 255, 81);
+    text-align: center;
+    border-radius: 2px;
+    padding: 4%;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    bottom: 70px;
+    font-size: 1.5em;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 70px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 70px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 70px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@media only screen and (min-device-width: 770px) {
+    .songBar {
+        padding: 2%;
+    }
+    div.songPlay {
+        width: 35%;
+        height: 100%;
+        text-align: center;
+        margin: 0.6% auto;
+    }
+    .songPic img {
+        height: 90%;
+    }
+    .pause,
+    .play {
+        width: 10%;
+        height: 10%;
+    }
+    div.songPlay input.play {
+        top: 80%;
+        left: 10%;
+    }
+    div.songPlay input.pause {
+        top: 80%;
+        left: 80%;
+    }
+    #snackbar {
+        font-size: 1.15em;
+        padding: 1%;
+    }
+}
