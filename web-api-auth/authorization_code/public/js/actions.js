@@ -125,8 +125,8 @@ const playAudio = (tracks, index, songTitle) => {
     const snackbar = document.getElementById('snackbar')
     snackbar.className = "show"
     setTimeout(() => {
-      // snackbar.className = snackbar.className.replace('show', "")
-      // snackbar.remove()
+      snackbar.className = snackbar.className.replace('show', "")
+      snackbar.remove()
     }, 3000)
   }
 
@@ -166,6 +166,16 @@ const eventDelActions = () =>{
 }
 
 {
+  var docWidth = document.documentElement.offsetWidth;
+
+  [].forEach.call(
+    document.querySelectorAll('*'),
+    function (el) {
+      if (el.offsetWidth > docWidth) {
+        console.log(el);
+      }
+    }
+  );
   $('.searchButton').on('click', e => {
     if ($('.artistName').val().length > 0) {
       e.preventDefault()

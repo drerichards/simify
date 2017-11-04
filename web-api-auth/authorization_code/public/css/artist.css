@@ -97,7 +97,17 @@
         background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     }
 
+    @media screen and (min-device-width: 768px) and (max-device-width: 1030px){
+        .thumbnailsList li {
+            height: 50%;
+            width: 65%;
+        }
+    }
+
     @media screen and (min-device-width: 600px) and (max-device-width: 820px) and (orientation: landscape) {
+        .searchSpan {
+            height: 87%;
+        }
         .artistMainPic {
             width: 30%;
         }
@@ -114,8 +124,7 @@
         .nameBox {
             font-size: 1.1em;
         }
-        .thumbnailsList::-webkit-scrollbar,
-        .trackDisplay::-webkit-scrollbar {
+        .thumbnailsList::-webkit-scrollbar, .trackDisplay::-webkit-scrollbar {
             width: 6px;
         }
     }
@@ -125,7 +134,7 @@
             width: 30%;
         }
         .searchSpan {
-            height: 96%;
+            height: 87%;
         }
         .thumbnailsList li {
             height: 60%;

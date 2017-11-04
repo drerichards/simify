@@ -168,6 +168,12 @@ div.songPlay input.pause {
     }
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1030px){
+    div.songPlay {
+        width: 65%;
+    }
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1030px) and (orientation: landscape) {
     div.songPlay {
         width: 35%;
