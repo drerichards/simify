@@ -97,7 +97,46 @@
         background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     }
 
-    @media only screen and (min-device-width: 770px) {
+    @media screen and (min-device-width: 600px) and (max-device-width: 820px) and (orientation: landscape) {
+        .artistMainPic {
+            width: 30%;
+        }
+        .thumbnailsContainer {
+            flex-basis: 70%;
+        }
+        .thumbnailsList {
+            height: 96%;
+        }
+        .thumbnailsList li {
+            height: 65%;
+            width: 25%;
+        }
+        .nameBox {
+            font-size: 1.1em;
+        }
+        .thumbnailsList::-webkit-scrollbar,
+        .trackDisplay::-webkit-scrollbar {
+            width: 6px;
+        }
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1030px) and (orientation: landscape) {
+        .artistMainPic {
+            width: 30%;
+        }
+        .searchSpan {
+            height: 96%;
+        }
+        .thumbnailsList li {
+            height: 60%;
+            width: 25%;
+        }
+        .thumbnailsContainer {
+            flex-basis: 70%;
+        }
+    }
+
+    @media only screen and (min-device-width: 1030px) {
         .searchSpan {
             margin-top: 0;
         }

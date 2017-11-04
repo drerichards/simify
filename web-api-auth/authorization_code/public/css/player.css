@@ -145,7 +145,37 @@ div.songPlay input.pause {
     }
 }
 
-@media only screen and (min-device-width: 770px) {
+@media screen and (min-device-width: 600px) and (max-device-width: 820px) and (orientation: landscape) {
+    .songBar {
+        padding: 4%;
+    }
+    div.songPlay {
+        width: 38%;
+        height: 95%;
+        margin: 0 auto;
+    }
+    .pause,
+    .play {
+        height: 15%;
+        width: 13%;
+    }
+    div.songPlay input.pause {
+        left: 82%;
+    }
+    #snackbar {
+        padding: 2%;
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1030px) and (orientation: landscape) {
+    div.songPlay {
+        width: 35%;
+        margin: 1% auto;
+    }
+}
+
+@media only screen and (min-device-width: 1030px) {
     .songBar {
         padding: 2%;
     }
