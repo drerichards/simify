@@ -4,7 +4,7 @@ const express = require('express'), // Express web server framework
  cookieParser = require('cookie-parser'),
   PORT = process.env.PORT || 8888
 
-require('./keys.js')
+require('./config/keys.js')
 const client_id = process.env.CLIENT_ID
 const client_secret = process.env.CLIENT_SECRET
 const redirect_uri = 'http://localhost:8888/callback' // redirect uri
