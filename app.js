@@ -1,9 +1,10 @@
-const express = require('express') // Express web server framework
-const request = require('request') // "Request" library
-const querystring = require('querystring')
-const cookieParser = require('cookie-parser')
+const express = require('express'), // Express web server framework
+ request = require('request'), // "Request" library
+ querystring = require('querystring'),
+ cookieParser = require('cookie-parser'),
+  PORT = process.env.PORT || 8888
 
-require('../keys.js')
+require('./keys.js')
 const client_id = process.env.CLIENT_ID
 const client_secret = process.env.CLIENT_SECRET
 const redirect_uri = 'http://localhost:8888/callback' // redirect uri
@@ -130,5 +131,4 @@ app.get('/refresh_token', (req, res) => {
   })
 })
 
-console.log('Listening on 8888')
-app.listen(8888)
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
