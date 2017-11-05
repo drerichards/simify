@@ -10,7 +10,7 @@ let accessToken, refreshToken
         while (e = r.exec(q)) {
             hashParams[e[1]] = decodeURIComponent(e[2])
         }
-        window.history.pushState("Simify", "Title", "/")
+        window.history.pushState("Simify", "Title", "https://simify.herokuapp.com")
         return hashParams
     }
 
@@ -48,7 +48,7 @@ let accessToken, refreshToken
 
         setInterval(() => {
             $.ajax({
-                url: '/refresh_token',
+                url: 'https://simify.herokuapp.com/refresh_token',
                 data: {
                     'refresh_token': refresh_token
                 }

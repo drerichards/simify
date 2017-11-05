@@ -30,7 +30,7 @@ app = express()
 app.use(express.static(__dirname + '/public'))
   .use(cookieParser())
 
-app.get('/login', (req, res) => {
+app.get('https://simify.herokuapp.com/login', (req, res) => {
 
   let state = generateRandomString(16)
   res.cookie(stateKey, state)
@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
     }))
 })
 
-app.get('/callback', (req, res) => {
+app.get('https://simify.herokuapp.com/callback', (req, res) => {
   // application requests refresh and access tokens
   // after checking the state parameter
   let code = req.query.code || null
@@ -92,13 +92,13 @@ app.get('/callback', (req, res) => {
         })
 
         // pass the token to the browser to make requests
-        res.redirect('/#' +
+        res.redirect('https://simify.herokuapp.com/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
           }))
       } else {
-        res.redirect('/#' +
+        res.redirect('https://simify.herokuapp.com/#' +
           querystring.stringify({
             error: 'invalid_token'
           }))
@@ -107,7 +107,7 @@ app.get('/callback', (req, res) => {
   }
 })
 
-app.get('/refresh_token', (req, res) => {
+app.get('https://simify.herokuapp.com/refresh_token', (req, res) => {
 
   // requesting access token from refresh token
   let refresh_token = req.query.refresh_token
