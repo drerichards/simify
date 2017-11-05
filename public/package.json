@@ -1,5 +1,5 @@
 {
-  "name": "spotify",
+  "name": "simify",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drerichards/Spotify.git"
+    "url": "git+https://github.com/drerichards/simify.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drerichards/Spotify/issues"
+    "url": "https://github.com/drerichards/simify/issues"
   },
-  "homepage": "https://github.com/drerichards/Spotify#readme"
+  "homepage": "https://github.com/drerichards/simify#readme"
 }
