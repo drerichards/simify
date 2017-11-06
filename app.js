@@ -29,7 +29,7 @@ app = express()
 app.use(express.static(__dirname + '/public'))
   .use(cookieParser())
 
-app.get('https://agile-cove-27876.herokuapp.com/login', (req, res) => {
+app.get('/login', (req, res) => {
 
   let state = generateRandomString(16)
   res.cookie(stateKey, state)
