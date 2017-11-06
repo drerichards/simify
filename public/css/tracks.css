@@ -41,6 +41,20 @@
     text-align: center;
     height: 4%;
     padding: 2% 0;
+    transition: 0.70s;
+    -webkit-transition: 0.70s;
+    -moz-transition: 0.70s;
+    -ms-transition: 0.70s;
+    -o-transition: 0.70s;
+}
+
+.dropDown:hover {
+    background-color: rgba(128, 91, 32, 0.3);
+    transition: 0.70s;
+    -webkit-transition: 0.70s;
+    -moz-transition: 0.70s;
+    -ms-transition: 0.70s;
+    -o-transition: 0.70s;
 }
 
 .tracksTitle {
@@ -149,6 +163,7 @@
     }
     .dropDown {
         padding: 0;
+        height: 70%;
     }
     .arrowImg {
         width: 1.5%;

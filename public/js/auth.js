@@ -10,7 +10,7 @@ let accessToken, refreshToken
         while (e = r.exec(q)) {
             hashParams[e[1]] = decodeURIComponent(e[2])
         }
-        window.history.pushState("Simify", "Title", "https://simify.herokuapp.com")
+        window.history.pushState("Simify", "Title", "/")
         return hashParams
     }
 
@@ -18,7 +18,7 @@ let accessToken, refreshToken
     let access_token = params.access_token,
         refresh_token = params.refresh_token,
         error = params.error
-
+    console.log(access_token, refresh_token)
 
     if (error) {
         alert('There was an error during the authentication')

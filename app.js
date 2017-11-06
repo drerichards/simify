@@ -2,11 +2,10 @@ const express = require('express'), // Express web server framework
  request = require('request'), // "Request" library
  querystring = require('querystring'),
  cookieParser = require('cookie-parser'),
-  PORT = process.env.PORT || 8888
-
-require('./config/keys.js')
-const client_id = process.env.CLIENT_ID
-const client_secret = process.env.CLIENT_SECRET
+  PORT = process.env.PORT || 8888,
+  keys = require('./config/keys.js')
+const client_id = keys.clientID
+const client_secret = keys.clientSecret
 const redirect_uri = 'http://localhost:8888/callback' // redirect uri
 
 /**
@@ -30,7 +29,7 @@ app = express()
 app.use(express.static(__dirname + '/public'))
   .use(cookieParser())
 
-app.get('https://simify.herokuapp.com/login', (req, res) => {
+app.get('https://agile-cove-27876.herokuapp.com/login', (req, res) => {
 
   let state = generateRandomString(16)
   res.cookie(stateKey, state)
@@ -47,7 +46,7 @@ app.get('https://simify.herokuapp.com/login', (req, res) => {
     }))
 })
 
-app.get('https://simify.herokuapp.com/callback', (req, res) => {
+app.get('/callback', (req, res) => {
   // application requests refresh and access tokens
   // after checking the state parameter
   let code = req.query.code || null
@@ -92,13 +91,13 @@ app.get('https://simify.herokuapp.com/callback', (req, res) => {
         })
 
         // pass the token to the browser to make requests
-        res.redirect('https://simify.herokuapp.com/#' +
+        res.redirect('/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
           }))
       } else {
-        res.redirect('https://simify.herokuapp.com/#' +
+        res.redirect('/#' +
           querystring.stringify({
             error: 'invalid_token'
           }))
@@ -107,7 +106,7 @@ app.get('https://simify.herokuapp.com/callback', (req, res) => {
   }
 })
 
-app.get('https://simify.herokuapp.com/refresh_token', (req, res) => {
+app.get('/refresh_token', (req, res) => {
 
   // requesting access token from refresh token
   let refresh_token = req.query.refresh_token
