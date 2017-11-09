@@ -30,7 +30,7 @@ body {
     text-rendering: optimizeLegibility;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-image: url("http://res.cloudinary.com/andrerichards/image/upload/c_scale,e_blur:671,w_690/v1509767530/concert_oyax0v.jpg");
+    background-image: url("https://res.cloudinary.com/andrerichards/image/upload/c_scale,e_blur:671,w_690/v1509767530/concert_oyax0v.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -81,6 +81,6 @@ button {
         font-size: 18px;
     }
     body {
-        background-image: url("http://res.cloudinary.com/andrerichards/image/upload/e_blur:671/v1509767530/concert_oyax0v.jpg");
+        background-image: url("https://res.cloudinary.com/andrerichards/image/upload/e_blur:671/v1509767530/concert_oyax0v.jpg");
     }
 }
