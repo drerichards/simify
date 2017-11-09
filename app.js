@@ -6,7 +6,7 @@ const express = require('express'), // Express web server framework
   keys = require('./config/keys.js')
 const client_id = keys.clientID
 const client_secret = keys.clientSecret
-const redirect_uri = 'http://localhost:8888/callback' // redirect uri
+const redirect_uri = '/callback' // redirect uri
 
 /**
  * Generates a random string containing numbers and letters
