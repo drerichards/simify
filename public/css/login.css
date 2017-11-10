@@ -36,6 +36,19 @@
     font-size: 1.2em;
 }
 
+.loginSection div {
+    font-weight: 100;
+    text-align: left;
+}
+
+.loginSection div p {
+    font-size: 85%;
+    font-style: italic;
+}
+.loginSection div p span{
+    color: #ff822e;
+}
+
 .loginSection a {
     width: 30%;
     height: 15%;
