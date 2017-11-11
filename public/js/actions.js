@@ -131,17 +131,17 @@ const playAudio = (tracks, index, songTitle) => {
   }
 
   $('li, .pause').click(e => {
-    event.preventDefault()
+   e.preventDefault()
     audio.pause()
   })
   $('.play').click(e => {
     console.log('play')
-    event.preventDefault()
+   e.preventDefault()
     audio.play()
   })
 
   $('.searchButton, .thumbnailsList').click(e => {
-    event.preventDefault()
+   e.preventDefault()
     audio.pause()
     audio.currentTime = 0
   })
@@ -167,16 +167,6 @@ const eventDelActions = () =>{
 }
 
 {
-  var docWidth = document.documentElement.offsetWidth;
-
-  // [].forEach.call(
-  //   document.querySelectorAll('*'),
-  //   function (el) {
-  //     if (el.offsetWidth > docWidth) {
-  //       console.log(el);
-  //     }
-  //   }
-  // );
   $('.searchButton').on('click', e => {
     if ($('.artistName').val().length > 0) {
       e.preventDefault()
