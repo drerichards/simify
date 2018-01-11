@@ -20,7 +20,7 @@ let accessToken, refreshToken
         error = params.error
 
     if (error) {
-        alert('There was an error during the authentication')
+        alert('There was an error during the authentication. Try once more please!')
     } else {
         if (access_token) {
             // render oauth info

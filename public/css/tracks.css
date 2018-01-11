@@ -121,7 +121,7 @@
     transform: rotate(180deg);
 }
 
-@media screen and (min-device-width: 600px) and (max-device-width: 820px) and (orientation: landscape) {
+@media screen and (min-width: 600px) and (max-width: 820px) and (orientation: landscape) {
     .dropDown {
         padding: 0 0 0.5%;
     }
@@ -130,7 +130,7 @@
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1030px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1030px) and (orientation: landscape) {
     .dropDown {
         padding: 0.5% 0;
     }
@@ -139,7 +139,7 @@
     }
 }
 
-@media only screen and (min-device-width: 1030px) {
+@media only screen and (min-width: 1030px) {
     .tracksContainer {
         height: 47.5%;
     }

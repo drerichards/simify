@@ -145,7 +145,7 @@ div.songPlay input.pause {
     }
 }
 
-@media screen and (min-device-width: 600px) and (max-device-width: 820px) and (orientation: landscape) {
+@media screen and (min-width: 600px) and (max-width: 820px) and (orientation: landscape) {
     .songBar {
         padding: 4%;
     }
@@ -168,20 +168,20 @@ div.songPlay input.pause {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1030px){
+@media only screen and (min-width: 768px) and (max-width: 1030px){
     div.songPlay {
         width: 65%;
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1030px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1030px) and (orientation: landscape) {
     div.songPlay {
         width: 35%;
         margin: 1% auto;
     }
 }
 
-@media only screen and (min-device-width: 1030px) {
+@media only screen and (min-width: 1030px) {
     .songBar {
         padding: 2%;
     }
