@@ -1,14 +1,15 @@
 .tracksContainer {
     height: 65%;
     display: flex;
+    align-content: center;
     flex-wrap: wrap;
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     visibility: hidden;
     position: relative;
 }
 
 .trackSpan {
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-basis: 100%;
     justify-content: center;

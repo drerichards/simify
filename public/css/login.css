@@ -1,6 +1,7 @@
 .loginModal {
     display: flex;
     height: 55%;
+    font-size: 15px;
     width: 8%;
     flex-direction: column;
     align-self: center;
