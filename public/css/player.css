@@ -186,8 +186,9 @@ div.songPlay input.pause {
         padding: 2%;
     }
     div.songPlay {
-        width: 35%;
-        height: 100%;
+        width: 35em;
+        height: 25em;
+        max-height: 500px;
         text-align: center;
         margin: 0.6% auto;
     }
