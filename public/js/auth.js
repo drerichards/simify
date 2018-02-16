@@ -26,7 +26,7 @@ let accessToken, refreshToken
             // render oauth info
             accessToken = access_token,
                 refreshToken = refresh_token
-            
+
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',

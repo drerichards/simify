@@ -3,7 +3,6 @@
     display: flex;
     align-content: center;
     flex-wrap: wrap;
-    /* flex-basis: 100%; */
     visibility: hidden;
     position: relative;
 }

@@ -2,7 +2,7 @@
 const searchArtist = searchValue => {
   $('.searchSpan').css('visibility', 'hidden')
   $('.tracksContainer').css('visibility', 'hidden')
-  $('.songTitle').html('')  
+  $('.songTitle').html('')
   const searchPromise = Promise.resolve($.ajax({
     url: 'https://api.spotify.com/v1/search',
     headers: {
@@ -29,7 +29,7 @@ const searchArtist = searchValue => {
         artistName = artistObject[index].name
       $('.resultList').css('display', 'none')
       $('.searchSpan').css('visibility', 'visible')
-      $('.tracksContainer').css('visibility', 'visible')      
+      $('.tracksContainer').css('visibility', 'visible')
       $('.artistMainPic').html(`<div class="picFormat" style="background-image: url(${artistObject[index].images[1].url})"></div>`)
       endpointPromises(artistID, artistName)
     })
@@ -119,7 +119,7 @@ const playAudio = (tracks, index, songTitle) => {
   try {
     if (tracks[index].preview_url == null) throw 'Track Not Available'
     audio.play()
-    $('.songTitle').html(`Now Playing: ${songTitle}`)    
+    $('.songTitle').html(`Now Playing: ${songTitle}`)
   } catch (err) {
     $('.bodyContainer').append(`<div id="snackbar">${err}</div>`)
     const snackbar = document.getElementById('snackbar')
@@ -131,27 +131,27 @@ const playAudio = (tracks, index, songTitle) => {
   }
 
   $('li, .pause').click(e => {
-   e.preventDefault()
+    e.preventDefault()
     audio.pause()
   })
   $('.play').click(e => {
     console.log('play')
-   e.preventDefault()
+    e.preventDefault()
     audio.play()
   })
 
   $('.searchButton, .thumbnailsList').click(e => {
-   e.preventDefault()
+    e.preventDefault()
     audio.pause()
     audio.currentTime = 0
   })
 }
 
-const eventDelActions = () =>{
+const eventDelActions = () => {
   $('.bodyContainer').on('click', '.dropDown', '.trackList', () => {
     $('.dropDown').toggleClass('open')
     $('.arrowImg').toggleClass('rotate')
-    $('.songPic').toggleClass('opacity')    
+    $('.songPic').toggleClass('opacity')
     $('.trackDisplay').animate({
       height: 'toggle'
     })
@@ -159,7 +159,7 @@ const eventDelActions = () =>{
 
   $('.bodyContainer').on('click', '.trackList', () => {
     $('.arrowImg').toggleClass('rotate')
-    $('.songPic').toggleClass('opacity')    
+    $('.songPic').toggleClass('opacity')
     $('.trackDisplay').animate({
       height: 'toggle'
     })
