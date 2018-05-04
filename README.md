@@ -18,7 +18,7 @@
 <p><strong>View 2</strong>  <img src="https://res.cloudinary.com/andrerichards/image/upload/v1515840931/portfolio/simi2.jpg" alt="View 2"></p>
 <h2 id="api-documentation">API Documentation</h2>
 <h4 id="spotify">Spotify</h4>
-<p>the Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.</p>
+<p>The Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.</p>
 <pre><code>https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?album_type=SINGLE&amp;offset=20&amp;limit=10
 </code></pre>
 <h2 id="technologies">Technologies:</h2>
